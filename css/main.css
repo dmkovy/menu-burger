@@ -19,20 +19,10 @@ nav {
 	background-color: #4c3167;
 }
 
-nav input {
-	display: none;
-}
-
-nav label {
-	padding: 10px 15px;
-	color: #ffffff;
-	display: none;
-}
-
 .wrapper {
 	max-width: 1024px;
 	margin: 0 auto;
-	padding: 0px 30px;
+	padding: 20px 30px;
 }
 
 .content {
@@ -48,16 +38,74 @@ nav label {
 .menu li a {
 	color: #ffffff;
 	padding: 10px 15px;
-	line-height: 50px;
+	line-height: 40px;
 }
 
 section {
-	padding: 10px 14px;
+	padding: 10px 15px;
 	line-height: 1.5;
 }
 
+.menu-toggle {
+	margin-bottom: 10px;
+	padding: 10px 15px;
+	cursor: pointer;
+	color: #ffffff;
+	display: none;
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+
+.hamburger {
+	width: 40px;
+	height: 4px;
+	margin-left: 12px;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	display: inline-block;
+	transition: all 0.3s ease-in;
+}
+
+.hamburger::before,
+.hamburger::after {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 4px;
+	background-color: #fff;
+	transition: all 0.3s ease-in;
+}
+
+.hamburger::before {
+	top: 16px;
+	transition: all 0.3s ease-in;
+}
+
+.hamburger::after {
+	top: -16px;
+	transition: all 0.3s ease-in;
+}
+
+.icon.active .hamburger {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.icon.active .hamburger::before {
+	top: 0;
+	transform: rotate(135deg);
+}
+
+.icon.active .hamburger::after {
+	top: 0;
+	transform: rotate(45deg);
+}
+
 @media (max-width: 650px) {
-	nav label {
+	.menu-toggle {
 		display: block;
 	}
 
@@ -67,14 +115,5 @@ section {
 
 	.menu li {
 		display: block;
-	}
-
-	#menuToggle:checked + .menu {
-		display: block;
-		position: absolute;
-		background-color: #4c3167;
-		width: 100%;
-		margin-left: -30px;
-		padding-left: 28px;
 	}
 }

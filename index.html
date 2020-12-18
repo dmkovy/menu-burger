@@ -4,7 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Menu burger (CSS)</title>
+	<title>Menu burger (CSS+jQuery)</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel="stylesheet" href="./css/nullstyle.css">
 	<link rel="stylesheet" href="./css/main.css">
@@ -14,8 +15,10 @@
 <body>
 	<nav>
 		<div class="wrapper">
-			<label for="menuToggle">Меню</label>
-			<input type="checkbox" id="menuToggle">
+			<div class="menu-toggle icon">
+				<div class="hamburger"></div>
+			</div>
+
 			<ul class="menu">
 				<li><a href="#">Главная</a></li>
 				<li><a href="#">Страница 1</a></li>
@@ -37,6 +40,8 @@
 			minus fuga.
 		</div>
 	</section>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="./js/main.js"></script>
 </body>
 
 </html>
